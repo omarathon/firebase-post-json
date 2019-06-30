@@ -4,7 +4,7 @@ A tool to *quickly POST a JSON file to a Google Firebase*: utilising **firebase4
 
 ## Dependencies
 
-This project was developed via Maven, as a result one may need to install the relevant dependencies:
+This project was developed via Maven, as a result one may require the relevant dependencies:
 
  - **Google Firebase** - com.google.firebase, firebase-admin, development version: 6.8.1
  - **firebase4j** - com.github.bane73, firebase4j, development version: Tmaster-b6f90e9764-1
