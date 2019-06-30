@@ -2,14 +2,6 @@
 
 A tool to *quickly POST a JSON file to a Google Firebase*: utilising **firebase4j** and **Google Firebase**.
 
-## Dependencies
-
-This project was developed via Maven, and used the following dependencies as libraries:
-
- - **Google Firebase** - com.google.firebase, firebase-admin
- - **firebase4j** - com.github.bane73, firebase4j
- - **Google Gson** - com.google.code.gson, gson
-
 ## Usage
 
 One may use this tool by downloading the most recently built jar file within the **build** directory.
@@ -28,6 +20,14 @@ One may find an **example use** of the tool within **Example.java**.
  - **lib/FirebaseConnection.java** - Small wrapper for the firebase4j library, simply for establishing a connection.
  - **lib/Auth.java** - General authentication class for Google Firebase.
  - **lib/JsonToMap.java** - A lightweight, simple, JSON parser utilising Google's GSON library. Converts a JSON file into a Map of (String, Object) pairs.
+ 
+ ## Dependencies
+
+This project was developed via Maven, and used the following dependencies as libraries:
+
+ - **Google Firebase** - com.google.firebase, firebase-admin
+ - **firebase4j** - com.github.bane73, firebase4j
+ - **Google Gson** - com.google.code.gson, gson
  
  ## Warning
  
