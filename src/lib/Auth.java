@@ -1,4 +1,4 @@
-/*
+package lib;/*
     General authentication class for Google Firebase.
     Reference: https://firebase.google.com/docs/admin/setup
 
@@ -9,16 +9,18 @@ import com.google.api.client.googleapis.auth.oauth2.GoogleCredential;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.FirebaseOptions;
+
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.net.URL;
 import java.util.Arrays;
 
 public class Auth {
     // Store the connection to the database as global
     private FirebaseApp app;
-    // Store the File object to the auth token as global
+    // Store the URL to the auth token as global
     private File token = null;
 
     // Two constructors to cover the two cases: using and not using an OAuth 2.0 token.
@@ -31,7 +33,7 @@ public class Auth {
         this.app = FirebaseApp.initializeApp(setUrlAndBuild(dbUrl, o));
     }
 
-    // Takes a File object to the authentication json file (OAuth 2.0 refresh token) and the website url to the base of the database as a string
+    // Takes a URL object to the authentication json file (OAuth 2.0 refresh token) and the website url to the base of the database as a string
     public Auth(String dbUrl, File tokenFile) throws FileNotFoundException, IOException {
         // Begin building the FirebaseOptions with the credentials set to the json OAuth 2.0 refresh token
         FirebaseOptions.Builder o = new FirebaseOptions.Builder().setCredentials(GoogleCredentials.fromStream(new FileInputStream(tokenFile)));

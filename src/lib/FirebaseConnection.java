@@ -1,4 +1,4 @@
-/*
+package lib;/*
     Small wrapper for the firebase4j library, simply for establishing a connection.
     An Object storing a connection to a Google Firebase via the firebase4j library.
     Utilised within FirebasePostJson as the connector to post from.
@@ -11,7 +11,9 @@
 
 import net.thegreshams.firebase4j.error.FirebaseException;
 import net.thegreshams.firebase4j.service.Firebase;
+
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 
 public class FirebaseConnection {
@@ -25,20 +27,47 @@ public class FirebaseConnection {
        one with OAuth 2.0 token, one without. Both require the base url of the database. */
 
     // Establish connection with no OAuth 2.0 token, only with base url
-    public FirebaseConnection (String baseUrl) throws FirebaseException {
-        this.connection = new Firebase(baseUrl);
+    public FirebaseConnection (String baseUrl) throws RuntimeException {
+        // Attempt to construct a firebase4j Firebase object with the input URL
+        try {
+            this.connection = new Firebase(baseUrl);
+        }
+        catch (FirebaseException e) {
+            throw new RuntimeException("ERROR: Failure to construct firebase4j Firebase object with input database! ADDITIONAL INFO: " + e.toString());
+        }
+        // Success, so update object properties.
         this.baseUrl = baseUrl;
         established = true;
     }
 
     // **WARNING**: Currently manfunctional, due to issue within firebase4j (using "auth" instead of "access_token" as parameter for OAuth 2.0 API key)!!
-    // Establish connection with base url and OAuth 2.0 token via File object storing its location
-    public FirebaseConnection(String baseUrl, File tokenFile) throws FirebaseException, IOException {
-        // Authenticate to Firebase via Auth wrapper, and generate access token.
-        Auth auth = new Auth(baseUrl, tokenFile);
-        String privateKey = auth.getAccessToken();
-        // Finally construct object
-        this.connection = new Firebase(baseUrl, privateKey);
+    // Establish connection with base url and OAuth 2.0 token via URL object storing its location
+    public FirebaseConnection(String baseUrl, File tokenFile) throws RuntimeException {
+        Auth auth;
+        // Attempt to authenticate to the Google Firebase, to allow generation of the private key.
+        try {
+            // Authenticate to Firebase via lib.Auth wrapper, and generate access token.
+            auth = new Auth(baseUrl, tokenFile);
+        }
+        catch (IOException e) {
+            throw new RuntimeException("ERROR: Failure to authenticate with Google Firebase! ADDITIONAL INFO: " + e.toString());
+        }
+        String privateKey;
+        // Attempt to obtain access token from Auth object.
+        try {
+            privateKey = auth.getAccessToken();
+        }
+        catch (IOException e) {
+            throw new RuntimeException("ERROR: Failure to obtain private key from Google Firebase! ADDITIONAL INFO: " + e.toString());
+        }
+        // Finally attempt to construct firebase4j Firebase object.
+        try {
+            this.connection = new Firebase(baseUrl, privateKey);
+        }
+        catch (FirebaseException e) {
+            throw new RuntimeException("ERROR: Failure to construct firebase4j Firebase object with input database! ADDITIONAL INFO: " + e.toString());
+        }
+        // Success, so update object properties.
         this.baseUrl = baseUrl;
         this.token = tokenFile;
         established = true;
@@ -57,7 +86,7 @@ public class FirebaseConnection {
         return this.baseUrl;
     }
 
-    // Getter for the OAuth 2.0 token File Object in which the connection may have been established with
+    // Getter for the OAuth 2.0 token URL Object in which the connection may have been established with
     public File getToken () {
         if (!established) throw new IllegalStateException("Connection not established!");
         if (!usingToken) throw new IllegalStateException("Connection was established without an OAuth 2.0 token!");
