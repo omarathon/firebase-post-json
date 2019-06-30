@@ -17,8 +17,8 @@ This project was developed via Maven, as a result one may need to install the re
 ## Auxiliary Files
  - **FirebaseConnection.java** - Small wrapper for the firebase4j library, simply for establishing a connection.
  - **Auth.java** - General authentication class for Google Firebase.
- - **JsonToMap.java** - A lightweight, simple, JSON parser utilising Google's GSON library.
+ - **JsonToMap.java** - A lightweight, simple, JSON parser utilising Google's GSON library. Converts a JSON file into a Map of (String, Object) pairs.
  
  ## Warning
  
-At present, firebase4j has issues with OAuth 2.0 authentication, however when fixed the tool shall work with authentication too. Therefore, one is urged only to use this tool for projects where security isn't a concern.
+At present, firebase4j has issues with OAuth 2.0 authentication, however when fixed this tool shall work with authentication. Therefore, one is urged only to use this tool for projects where security isn't a concern.
