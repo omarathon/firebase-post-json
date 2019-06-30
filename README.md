@@ -21,4 +21,4 @@ This project was developed via Maven, as a result one may require the relevant d
  
  ## Warning
  
-At present, firebase4j has issues with OAuth 2.0 authentication, however when fixed this tool shall work with authentication. Therefore, one is urged only to use this tool for projects where security isn't a concern.
+At present, firebase4j has issues with OAuth 2.0 authentication, however when fixed this tool shall work with authentication. Therefore, one is urged only to use this tool in projects where security isn't a concern.
