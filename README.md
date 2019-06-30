@@ -15,9 +15,9 @@ This project was developed via Maven, as a result one may need to install the re
  - **Example.java** - An example use of FirebasePostJson.
  
 ## Auxiliary Files
- - **FirebaseConnection.java** - Small wrapper for the firebase4j library, simply for establishing a connection.
- - **Auth.java** - General authentication class for Google Firebase.
- - **JsonToMap.java** - A lightweight, simple, JSON parser utilising Google's GSON library. Converts a JSON file into a Map of (String, Object) pairs.
+ - **lib/FirebaseConnection.java** - Small wrapper for the firebase4j library, simply for establishing a connection.
+ - **lib/Auth.java** - General authentication class for Google Firebase.
+ - **lib/JsonToMap.java** - A lightweight, simple, JSON parser utilising Google's GSON library. Converts a JSON file into a Map of (String, Object) pairs.
  
  ## Warning
  
