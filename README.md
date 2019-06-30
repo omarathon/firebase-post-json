@@ -11,7 +11,7 @@ This project was developed via Maven, as a result one may need to install the re
  - **Google Gson** - com.google.code.gson, gson, development version: 2.8.5
 
 ## Main Files
- - **FirebasePostJson.java** - The central file combining the auxiliary files, posts a JSON file to a Google Firebase (essentially a wrapper for firebase4j posts with additional JSON processing).
+ - **FirebasePostJson.java** - The central file combining the auxiliary files, posts a JSON file to a Google Firebase (essentially a wrapper for POST requests within firebase4j, however with additional JSON processing).
  - **Example.java** - An example use of FirebasePostJson.
  
 ## Auxiliary Files
