@@ -1,6 +1,6 @@
 # # firebase-post-json
 
-A tool to **quickly POST a JSON file to a Google Firebase**: utilising **firebase4j** and **Google Firebase**.
+A tool to *quickly POST a JSON file to a Google Firebase*: utilising **firebase4j** and **Google Firebase**.
 
 ## Dependencies
 
