@@ -7,6 +7,8 @@
     Author: Omar Tanner, 2019 -- open source.
 */
 
+import lib.FirebaseConnection;
+import lib.JsonToMap;
 import net.thegreshams.firebase4j.error.FirebaseException;
 import net.thegreshams.firebase4j.error.JacksonUtilityException;
 import net.thegreshams.firebase4j.model.FirebaseResponse;

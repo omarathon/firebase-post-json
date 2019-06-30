@@ -2,6 +2,7 @@
     An example use of FirebasePostJson.
 */
 
+import lib.FirebaseConnection;
 import net.thegreshams.firebase4j.error.FirebaseException;
 import net.thegreshams.firebase4j.error.JacksonUtilityException;
 import java.io.*;
