@@ -6,14 +6,13 @@ import lib.FirebaseConnection;
 import net.thegreshams.firebase4j.error.FirebaseException;
 import net.thegreshams.firebase4j.error.JacksonUtilityException;
 import java.io.*;
-import java.net.URL;
 
 public class Example {
     public static void main(String[] args) {
         // For example, storing a JSON called "example_data.json" in C:\data, and seek to upload.
         File jsonFile = new File("C:/data/example_data.json");
-        // Currently malfunctional, however to authenticate via OAuth 2.0, pass it a URL object of the OAuth 2.0 authentication json file. E.g storing it as "auth.json" in C:/data:
-        URL authUrl = new File("C:/data/auth.json");
+        // Currently malfunctional, however to authenticate via OAuth 2.0, pass it a URL object of the OAuth 2.0 authentication json file. E.g storing it as "auth.json" in C:/data
+        File authFile = new File("C:/data/auth.json");
 
         // Obtain firebase4j connection by constructing a FirebaseConnection object, with the root URL of the firebase, e.g "my-project.firebaseio.com"
         FirebaseConnection con;
