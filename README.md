@@ -6,9 +6,9 @@ A tool to *quickly POST a JSON file to a Google Firebase*: utilising **firebase4
 
 This project was developed via Maven, as a result one may require the relevant dependencies:
 
- - **Google Firebase** - com.google.firebase, firebase-admin, development version: 6.8.1
- - **firebase4j** - com.github.bane73, firebase4j, development version: Tmaster-b6f90e9764-1
- - **Google Gson** - com.google.code.gson, gson, development version: 2.8.5
+ - **Google Firebase** - com.google.firebase, firebase-admin
+ - **firebase4j** - com.github.bane73, firebase4j
+ - **Google Gson** - com.google.code.gson, gson
 
 ## Main Files
  - **FirebasePostJson.java** - The central file combining the auxiliary files, posts a JSON file to a Google Firebase (essentially a wrapper for POST requests within firebase4j, however with additional JSON processing).
