@@ -12,6 +12,42 @@ This project was developed via Maven, and used the following dependencies as lib
  
 One must install such dependencies within their project to allow the implementation of this tool.
 
+Below are the dependencies and repositories within the **pom.xml** when developing this project:
+
+```
+<dependencies>
+        <dependency>
+            <groupId>com.google.firebase</groupId>
+            <artifactId>firebase-admin</artifactId>
+            <version>6.8.1</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.github.bane73</groupId>
+            <artifactId>firebase4j</artifactId>
+            <version>Tmaster-b6f90e9764-1</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.google.code.gson</groupId>
+            <artifactId>gson</artifactId>
+            <version>2.8.5</version>
+        </dependency>
+    </dependencies>
+
+    <properties>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+    </properties>
+
+    <repositories>
+        <repository>
+            <id>jitpack.io</id>
+            <url>https://jitpack.io</url>
+        </repository>
+    </repositories>
+ ```
+
 ## Usage
 
 One may use this tool by adding the above dependencies to their project, and storing **FirebasePostJson.java**, as well as the **files within lib**, somewhere within their project. Then they may proceed to interact with **FirebasePostJson.java** in an *examplar fashion* shown within **Example.java**.
