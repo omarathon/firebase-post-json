@@ -33,19 +33,19 @@ Below are the dependencies and repositories within the **pom.xml** when developi
             <artifactId>gson</artifactId>
             <version>2.8.5</version>
         </dependency>
-    </dependencies>
+</dependencies>
 
-    <properties>
+<properties>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
-    </properties>
+</properties>
 
-    <repositories>
+<repositories>
         <repository>
             <id>jitpack.io</id>
             <url>https://jitpack.io</url>
         </repository>
-    </repositories>
+</repositories>
  ```
 
 ## Usage
