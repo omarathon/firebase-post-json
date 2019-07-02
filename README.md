@@ -64,3 +64,7 @@ One may use this tool by adding the above dependencies to their project, and sto
  ## Warning
 
 At present, firebase4j has issues with OAuth 2.0 authentication, however when fixed this tool shall work with authentication. Therefore, one is urged only to use this tool in projects where security isn't a concern.
+
+## Remark
+
+One is recommended only to use this code within prototype systems - *it may not be safe for production*.
