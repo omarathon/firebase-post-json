@@ -1,6 +1,6 @@
 # # firebase-post-json
 
-A tool to *quickly POST a JSON file to a Google Firebase*: utilising **firebase4j** and **Google Firebase**.
+A tool to *quickly POST a JSON file to a Google Firebase*: utilising [firebase4j](https://github.com/bane73/firebase4j) and [Google Firebase](https://firebase.google.com/).
 
 ## Dependencies
 
@@ -8,7 +8,7 @@ This project was developed via Maven, and used the following dependencies as lib
 
  - **Google Firebase** - com.google.firebase, firebase-admin
  - **firebase4j** - com.github.bane73, firebase4j
- - **Google Gson** - com.google.code.gson, gson
+ - [Google Gson](https://github.com/google/gson) - com.google.code.gson, gson
  
 One must install such dependencies within their project to allow the implementation of this tool.
 
