@@ -52,6 +52,8 @@ Below are the dependencies and repositories within the **pom.xml** when developi
 
 One may use this tool by adding the above dependencies to their project, and storing **FirebasePostJson.java**, as well as the **files within lib**, somewhere within their project. Then they may proceed to interact with **FirebasePostJson.java** in an *examplar fashion* shown within **Example.java**.
 
+**Note**: One may need to modify the package names of the files to fit their project.
+
 ## Main Files
  - **FirebasePostJson.java** - The central file combining the auxiliary files, posts a JSON file to a Google Firebase (essentially a wrapper for POST requests within firebase4j, however with additional JSON processing).
  - **Example.java** - An examplar use of FirebasePostJson.
